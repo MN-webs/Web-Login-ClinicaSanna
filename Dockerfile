@@ -1,9 +1,9 @@
 FROM tomcat:10.1-jdk17-temurin
 
-# Limpiamos el directorio por defecto de Tomcat
+# 1. Limpiar las aplicaciones por defecto del servidor Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copiamos el contenido de la carpeta 'web' de NetBeans directamente a ROOT
+# 2. Copiar el contenido de la carpeta web de tu proyecto a la raíz de Tomcat
 COPY web/ /usr/local/tomcat/webapps/ROOT/
 
 EXPOSE 8080
